@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  argocd/app-name: testchat-apprhoai
+  janus-idp.io/tekton: testchat-apprhoai
+  backstage.io/kubernetes-id: testchat-apprhoai
+  backstage.io/kubernetes-namespace: testns 
+  app.kubernetes.io/part-of: testchat-apprhoai
+resources: 
+- initialize-namespace.yaml
+- pvc.yaml
+- deployment-model-server.yaml
+- service-model-server.yaml
+- deployment.yaml
+- route.yaml
+- service.yaml
+- rhoai/

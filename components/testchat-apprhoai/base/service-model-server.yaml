@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: testchat-apprhoai-model-server
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: testchat-apprhoai-model-server
+  name: testchat-apprhoai-model-server
+spec:
+  ports:
+  - port: 8001
+    protocol: TCP
+    targetPort: 8001
+  selector:
+    app.kubernetes.io/instance: testchat-apprhoai-model-server
